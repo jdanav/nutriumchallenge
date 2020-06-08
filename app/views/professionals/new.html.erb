@@ -1,0 +1,50 @@
+<%= form_with scope: :professional, url: professionals_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :job_description %><br>
+    <%= form.text_field :job_description %>
+  </p>
+
+  <p>
+    <%= form.label :pro_id %><br>
+    <%= form.text_field :pro_id %>
+  </p>
+
+  <p>
+    <%= form.label :office %><br>
+    <%= form.text_field :office %>
+  </p>
+
+  <p>
+    <%= form.label :address %><br>
+    <%= form.text_field :address %>
+  </p>
+
+  <p>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+  </p>
+
+  <p>
+    <%= form.label :appointment %><br>
+    <%= form.text_field :appointment %>
+  </p>
+
+  <p>
+    <%= form.label :price %><br>
+    <%= form.text_field :price %>
+  </p>
+
+  <p>
+    <%= form.label :photo %><br>
+    <%= form.text_field :photo %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
