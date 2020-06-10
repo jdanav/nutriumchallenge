@@ -2,7 +2,7 @@
 <body class="body">
   <div class="header">
     <a href=#><%= image_tag("nlogo.svg", :style => "height: 35px; margin-top: 30px; float:left; margin-left: 18%;") %></a>
-    <span style="margin-top: 35px; font-size: 18px; float: right; margin-right: 18%;">Are you a healthcare professional? <a href=#><b>Sign up here →</b></a></span>
+    <span style="margin-top: 35px; font-size: 18px; float: right; margin-right: 18%;">Are you a healthcare professional? <a href=#><strong>Sign up here →</strong></a></span>
   </div>
   <div class="header searchnav">
     <input type="text" class="input" placeholder="Nutricionista Desportivo" style="margin-left: 18%">&nbsp
@@ -12,21 +12,32 @@
     </div>&nbsp
     <button class="search_button" name="search">Pesquisar</button>
   </div>
-  <div class="container">
-    <div class="results">
+  <div class="middle">
+    <div class="wrapper">
       <% @result = Professional.first %>
-        <%= @result.name %>
-        <%= @result.job_description %>
-        <%= @result.pro_id %>
-        <%= @result.office %>
-        <%= @result.address %>
-        <%= @result.city %>
-        <%= @result.appointment %>
-        <%= @result.price %>
-        <%= image_tag(@result.photo, :style => "width: 100px; border-radius:50%") %>
-    </div>
+      <div class="grid">
+        <div class="photo"><%= image_tag(@result.photo, :style => "width: 110px; border-radius:50%") %></div>
+        <div class="name"><%= @result.name %></div>
+        <div class="job_id"><%= @result.job_description %>&nbsp·&nbsp<%= @result.pro_id %></div>
+        <div class="set_appointment">
+          <button class="button">Marcar Consulta</button>
+        </div>
+        <div class="set_appointment personal_page">
+          <button class="button personal">Página Pessoal</button>
+        </div>
+        <div class="info office" style="grid-area:f"><%= @result.office %></div>
+        <div class="info" style="grid-area:g; background-image:url(<%= image_path 'work.svg' %>)">
+          <select>
+          <option value=<%= @result.appointment %>><%= @result.appointment %></option>
+        </select>
+      </div>
+        <div class="info" style="grid-area:h"><%= @result.address %></div>
+        <div class="info" style="grid-area:i; background-image:url(<%= image_path 'money.svg' %>)"><%= @result.price %> €</div>
+        <div class="info" style="grid-area:j"><%= @result.city %></div>
+      </div>
   </div>
-<footer class="footer">
+</div>
+<footer>
   <div class="pagination">
 <% (1..10).each do |page| %>
 <a href="#" class="<%= 'active' if page==1 %>"><%= "#{page}" %></a>

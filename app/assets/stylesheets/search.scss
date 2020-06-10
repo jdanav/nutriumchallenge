@@ -1,12 +1,22 @@
 // styles
 * {
     box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Geomanist";
+}
+
+::placeholder {color: #95cecb;}
+
+*:focus {
+    outline: 0 !important;
 }
 
 html, body {
   min-width: 1200px;
   width: auto;
   height: 100%;
+  color: #95cecb;
+
 }
 
 body {
@@ -15,17 +25,9 @@ body {
 }
 
 @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('HelveticaNeueLt.ttf');
+    font-family: "Geomanist";
+    src: url('Geomanist-Regular.otf');
     font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url('HelveticaNeueMed.ttf');
-    font-weight: bold;
     font-style: normal;
 }
 
@@ -38,7 +40,6 @@ body {
   linear-gradient(170deg, rgb(64,223,133) 15%, rgb(64,188,152) 60%);
   background-position: 0 0, 15% 0;
   background-size: 15%, 100%;
-  font-family: "Helvetica Neue";
   text-align: right;
   color: white;
 }
@@ -56,21 +57,18 @@ body {
   background-size: 15%, 100%;
 }
 
-a:link, a:visited {
+.header a:link, a:visited {
   color: white;
-  text-decoration: none;
 }
 
-a:hover {
+.header a:hover {
   color: #e8966a;
 }
 
 .body {
   margin: 0;
-  font-family: "Helvetica Neue";
   font-size: 20px;
   line-height: 20px;
-  color: #333;
 }
 
 .input {
@@ -89,8 +87,8 @@ a:hover {
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
     font-family: inherit;
     font-size: 18px;
-    color: grey;
     line-height: 1.5;
+    color: #95cecb;
 }
 
 .input_with_button {
@@ -111,15 +109,13 @@ a:hover {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     text-decoration:none;
+    cursor: pointer;
+
 }
 
 .input_button:hover {
     background-size: 30px 30px;
     border: 0;
-  }
-
-.input:focus {
-  outline: 0;
   }
 
 .search_button {
@@ -131,11 +127,11 @@ a:hover {
     border: 0;
     border-radius: 5px;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
-    background-color: #e99f7a; //e8966a on hover
+    background-color: #e99f7a;
     font-family: inherit;
-    font-weight: bold;
     font-size: 18px;
     color: inherit;
+    cursor: pointer;
   }
 
 .search_button:hover {
@@ -143,11 +139,30 @@ a:hover {
     border: 0;
   }
 
-.body_button {
-  
+.button {
+  width: 250px;
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #f6e8df;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 17px;
+  color: #e99f7a;
+  cursor: pointer;
 }
 
-.container {
+.button:hover {
+  opacity:0.9;
+}
+
+.personal {
+  background-color: #e0faf1;
+  color: #76bead;
+}
+
+
+.middle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,7 +171,7 @@ a:hover {
   background-color: #f8f9fd;
 }
 
-.results {
+.wrapper {
   height: 80%;
   min-width: 64%;
   width: 64%;
@@ -165,9 +180,81 @@ a:hover {
   background-color: white;
 }
 
-.footer {
+.grid {
+  display: grid;
+  column-gap: 15px;
+  grid-row-gap: 10px;
+  grid-template-columns: min-content auto;
+  grid-template-areas:
+    'a b d'
+    'a c e'
+    'a f g'
+    'a h i'
+    'a j .';
+}
+
+//.grid > div {background:yellow;}
+.photo {
+  grid-area: a;
+  width: 120px;
+}
+
+.name {
+  grid-area: b;
+  color: #24b28d;
+  font-size: 28px;
+  align-self: flex-end;
+}
+
+.job_id {
+  grid-area: c;
+  color: #dfdbad;
+  font-size: 19px;
+  align-self: flex-start;
+}
+
+select {
+  font-size: inherit;
+  color:inherit;
+  background-color: inherit;
+  border:0;
+  margin-left:-5px;
+  cursor: pointer;
+}
+
+.set_appointment {
+  grid-area: d;
+  align-self: flex-end;
+  justify-self: flex-end;
+  padding-right: 30px;
+  padding-top: 15px;
+}
+
+.personal_page {
+  grid-area: e;
+  align-self: flex-start;
+  padding-top: 0;
+  padding-bottom: 35px;
+ }
+
+.info {
+  padding-left: 30px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+}
+
+.office {
+  background-image: url("marker.svg");
+  text-shadow: 0 0 1px #e99f7a;
+  color: #e99f7a;
+}
+
+footer {
   flex-shrink: 0;
   height: 115px;
+  color: inherit;
 }
 
 .pagination {
@@ -177,18 +264,16 @@ a:hover {
 }
 
 .pagination a {
-  color: black;
   float: left;
   width: 25px;
   height: 25px;
   font-family: inherit;
-  color: grey;
-  font-weight: bold;
   font-size: 15px;
   text-align: center;
   transition: background-color .3s;
   border: 0;
   margin: 0 4px;
+  color: inherit;
 }
 
 .pagination a.active {
