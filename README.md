@@ -1,24 +1,20 @@
-# README
+# Nutrium challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Como resposta ao desafio, foi criada usando Rails e HTML/CSS uma página simples tentando emular o layout proposto. Foram tomadas algumas liberdades com o tipo de letra e ícones.
 
-Things you may want to cover:
+A fotografia utilizada tem como origem a página ThisPersonDoesNotExist.com.
 
-* Ruby version
+### Instruções para execução
 
-* System dependencies
+Os seguintes passos são referentes a um sistema operativo Windows, após a clonagem do projecto (nutriumchallenge):
 
-* Configuration
+```sh
+$ cd nutriumchallenge
+$ gem install bundler
+$ yarn install
+$ bundle install
+$ rake db:setup
+$ rails s
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A página estará acessível via `localhost:3000`
