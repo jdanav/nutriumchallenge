@@ -1,1 +1,1 @@
-Professional.create(pro_id:'2020N', name: 'Ana Pessoa',job_description: 'Nutricionista', office:'Clínica Genérica', address:'Avenida Central, 6',city:'Vila Nova de Gaia, Porto',appointment:'Consulta presencial',price:'35',photo:'person.jpg')
+Professional.create(pro_id:'2020N', name: 'Virgínia Antunes',job_description: 'Nutricionista', office:'Clínica Médica Aliança', address:'Av. da Corredoura, 151, Sobrosa', city:'Paredes, Porto',appointment:'Consulta presencial',price:'35',photo:'person.jpg')
